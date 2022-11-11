@@ -5,6 +5,7 @@ module.exports = (sequelize) => {
   // defino el modelo
   sequelize.define('country', {
     id:{
+      //type: DataTypes.STRING,
       type: DataTypes.UUID,
       defaultValue: DataTypes.UUIDV4,
       allowNull: false,
@@ -18,11 +19,15 @@ module.exports = (sequelize) => {
       type: DataTypes.STRING,
       allowNull: false
     },
-    region: {
+    continents: {
       type: DataTypes.STRING,
       allowNull: false
     },
     capital: {
+      type: DataTypes.STRING,
+      allowNull: false
+    },
+    region: {
       type: DataTypes.STRING,
       allowNull: false
     },
@@ -31,12 +36,28 @@ module.exports = (sequelize) => {
       allowNull: false
     },
     area: {
-      type: DataTypes.STRING,
+      type: DataTypes.INTEGER,
       allowNull: false
     },
     population: {
-      type: DataTypes.STRING,
+      type: DataTypes.INTEGER,
       allowNull: false
     }
+    /*createdInDb: {
+      type: DataTypes.BOOLEAN,
+      allowNull: false,
+      defaultValue:true
+    }*/
   });
 };
+
+/*
+ID (Código de 3 letras) *
+Nombre *
+Imagen de la bandera *
+Continente *
+Capital *
+Subregión
+Área
+Población
+*/
